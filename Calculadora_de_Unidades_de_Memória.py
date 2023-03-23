@@ -48,7 +48,12 @@ def GBParaTB(valorASerConvertido):
     terabytesCalculado = valorASerConvertido / Const_ValorParaConverção
     return terabytesCalculado
 
+def TBParaGB(valorASerConvertido):
+    print('Valor convertido de TB para GB')
+    gigabytesCalculado = valorASerConvertido * Const_ValorParaConverção
+    return gigabytesCalculado
+
 print('Insira o valor a ser convertido')
 entradaDoTecladoValorASerConvertida  = converterStringParaFloat(input())
-valorConvertido = GBParaTB(entradaDoTecladoValorASerConvertida)
+valorConvertido = TBParaGB(entradaDoTecladoValorASerConvertida)
 print(valorConvertido)
