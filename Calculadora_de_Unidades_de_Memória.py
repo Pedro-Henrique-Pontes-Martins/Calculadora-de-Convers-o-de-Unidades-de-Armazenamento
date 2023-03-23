@@ -13,7 +13,12 @@ def byteParaBit(valorASerConvertido):
     bitsCalculado = valorASerConvertido * 8
     return bitsCalculado
 
+def byteParaKB(valorASerConvertido):
+    print('Valor convertido de byte para KB')
+    kilobytesCalculado = valorASerConvertido / Const_ValorParaConverção
+    return kilobytesCalculado
+
 print('Insira o valor a ser convertido')
 entradaDoTecladoValorASerConvertida  = converterStringParaFloat(input())
-valorConvertido = byteParaBit(entradaDoTecladoValorASerConvertida)
+valorConvertido = byteParaKB(entradaDoTecladoValorASerConvertida)
 print(valorConvertido)
