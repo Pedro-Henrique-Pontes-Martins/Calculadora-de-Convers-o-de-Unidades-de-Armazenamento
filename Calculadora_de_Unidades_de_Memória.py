@@ -28,7 +28,12 @@ def KBParaMB(valorASerConvertido):
     megabytesCalculado = valorASerConvertido / Const_ValorParaConverção
     return megabytesCalculado
 
+def MBParaKB(valorASerConvertido):
+    print('Valor convertido de MB para KB')
+    kilobytesCalculado = valorASerConvertido * Const_ValorParaConverção
+    return kilobytesCalculado
+
 print('Insira o valor a ser convertido')
 entradaDoTecladoValorASerConvertida  = converterStringParaFloat(input())
-valorConvertido = KBParaMB(entradaDoTecladoValorASerConvertida)
+valorConvertido = MBParaKB(entradaDoTecladoValorASerConvertida)
 print(valorConvertido)
