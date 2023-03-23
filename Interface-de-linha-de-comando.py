@@ -1,2 +1,3 @@
 from Calculadora_de_Unidades_de_Memória import bitParaByte, byteParaBit, byteParaKB, KBParaByte, KBParaMB, MBParaKB, MBParaGB, GBParaMB, GBParaTB, TBParaGB, TBParaPB, PBParaTB
 
+print(' Escreva 1 para converter de bit para byte \n Escreva 2 para converter de byte para bit \n Escreva 3 para converter de byte para KB \n Escreva 4 para converter de KB para byte \n Escreva 5 para converter de KB para MB \n Escreva 6 para converter de MB para KB \n Escreva 7 para converter de MB para GB \n Escreva 8 para converter de GB para MB \n Escreva 9 para converter de GB para TB \n Escreva 10 para converter de TB para GB \n Escreva 11 para converter de TB para PB \n Escreva 12 para converter de PB para TB \n')

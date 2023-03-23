@@ -62,8 +62,3 @@ def PBParaTB(valorASerConvertido):
     print('Valor convertido de PB para TB')
     terabytesCalculado = valorASerConvertido * Const_ValorParaConverção
     return terabytesCalculado
-
-print('Insira o valor a ser convertido')
-entradaDoTecladoValorASerConvertida  = converterStringParaFloat(input())
-valorConvertido = PBParaTB(entradaDoTecladoValorASerConvertida)
-print(valorConvertido)
