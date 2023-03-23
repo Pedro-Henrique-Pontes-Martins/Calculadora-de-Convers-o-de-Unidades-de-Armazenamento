@@ -38,8 +38,12 @@ def MBParaGB(valorASerConvertido):
     gigabytesCalculado = valorASerConvertido / Const_ValorParaConverção
     return gigabytesCalculado
 
+def GBParaMB(valorASerConvertido):
+    print('Valor convertido de GB para MB')
+    megabytesCalculado = valorASerConvertido * Const_ValorParaConverção
+    return megabytesCalculado
 
 print('Insira o valor a ser convertido')
 entradaDoTecladoValorASerConvertida  = converterStringParaFloat(input())
-valorConvertido = MBParaGB(entradaDoTecladoValorASerConvertida)
+valorConvertido = GBParaMB(entradaDoTecladoValorASerConvertida)
 print(valorConvertido)
