@@ -1,5 +1,10 @@
 unidadesDeMedidas = ['Bit', 'Byte', 'KB', 'MB', 'GB', 'TB', 'PB' ]
 
+def mostrarUnidadesDeMedida(unidadesDeMedidas):
+    print('Unidades de Medida Disponíveis:')
+    for i in unidadesDeMedidas:
+        print(i)
+
 def calcularFatorDeConversão(unidadeInicial, unidadeDeConversão):
     contador = 0
     for i in unidadesDeMedidas:
@@ -14,25 +19,35 @@ def calcularFatorDeConversão(unidadeInicial, unidadeDeConversão):
     return int(fatorDeConversão)
 
 def conversão(unidadeInicial, unidadeDeConversão, númeroParaConversão):
-    fatorDeConvesão = 1024 ** calcularFatorDeConversão(unidadeInicial, unidadeDeConversão)
-    print (fatorDeConvesão)
+    fatorDeConvesão = calcularFatorDeConversão(unidadeInicial, unidadeDeConversão)
     númeroConvertido = númeroParaConversão
+
     if(unidadeInicial == 'Bit' or unidadeDeConversão == 'Bit'):
-        print('Em breve!')
-    else:
-        if (fatorDeConvesão < 0):
-            númeroConvertido *= fatorDeConvesão
-            
-        if (fatorDeConvesão > 0):
-            númeroConvertido *= fatorDeConvesão
+        if(unidadeInicial == 'Bit'):
+            númeroConvertido /= 8
+            fatorDeConvesão += 1 
+        if(unidadeDeConversão == 'Bit'):
+            númeroConvertido *= 8 
+            fatorDeConvesão -= 1 
+
+    if (fatorDeConvesão < 0):
+        fatorDeConvesão *= -1
+        fatorDeConvesão = 1024 ** fatorDeConvesão
+        númeroConvertido /= fatorDeConvesão
+    elif(fatorDeConvesão > 0):
+        fatorDeConvesão = 1024 ** fatorDeConvesão
+        númeroConvertido *= fatorDeConvesão
+        
     return númeroConvertido
 
-print('Digite a unidade de medida inicial:')
+mostrarUnidadesDeMedida(unidadesDeMedidas)
+
+print('Digite a unidade de medida inicial do valor:')
 unidadeInicial = input()
 print('Digite a unidade para qual o valor será convertido:')
 unidadeDeConversão = input()
-print(calcularFatorDeConversão(unidadeInicial, unidadeDeConversão))
 print('Digite o número a ser convertido:')
 numeroParaConversão = float(input())
 
-print(conversão(unidadeInicial, unidadeDeConversão, numeroParaConversão))
+print('Resultado da conversão:')
+print(str(conversão(unidadeInicial, unidadeDeConversão, numeroParaConversão)) + ' ' + unidadeDeConversão + 's')
