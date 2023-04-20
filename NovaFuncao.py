@@ -1,6 +1,6 @@
 unidadesDeMedidas = ['Bit', 'Byte', 'KB', 'MB', 'GB', 'TB', 'PB' ]
 
-def fatorDeConversão(unidadeInicial, unidadeDeConversão):
+def calcularFatorDeConversão(unidadeInicial, unidadeDeConversão):
     contador = 0
     for i in unidadesDeMedidas:
         if (unidadeInicial == i):
@@ -10,24 +10,29 @@ def fatorDeConversão(unidadeInicial, unidadeDeConversão):
             unidadeDeConversão = contador
 
         contador += 1
-    return unidadeInicial - unidadeDeConversão
+    fatorDeConversão = unidadeInicial - unidadeDeConversão
+    return int(fatorDeConversão)
 
 def conversão(unidadeInicial, unidadeDeConversão, númeroParaConversão):
-    fatorDeConversão = 1024 ** fatorDeConversão(unidadeInicial, unidadeDeConversão)
+    fatorDeConvesão = 1024 ** calcularFatorDeConversão(unidadeInicial, unidadeDeConversão)
+    print (fatorDeConvesão)
     númeroConvertido = númeroParaConversão
-    if(unidadeInicial != 'Bit' and unidadeDeConversão != 'Bit'):
-        if (fatorDeConversão > 0):
-            númeroConvertido *= fatorDeConversão
+    if(unidadeInicial == 'Bit' or unidadeDeConversão == 'Bit'):
+        print('Em breve!')
+    else:
+        if (fatorDeConvesão < 0):
+            númeroConvertido *= fatorDeConvesão
             
-        if (fatorDeConversão < 0):
-            númeroConvertido /= fatorDeConversão * -1
-
+        if (fatorDeConvesão > 0):
+            númeroConvertido *= fatorDeConvesão
+    return númeroConvertido
 
 print('Digite a unidade de medida inicial:')
 unidadeInicial = input()
 print('Digite a unidade para qual o valor será convertido:')
 unidadeDeConversão = input()
-
+print(calcularFatorDeConversão(unidadeInicial, unidadeDeConversão))
 print('Digite o número a ser convertido:')
 numeroParaConversão = float(input())
 
+print(conversão(unidadeInicial, unidadeDeConversão, numeroParaConversão))
