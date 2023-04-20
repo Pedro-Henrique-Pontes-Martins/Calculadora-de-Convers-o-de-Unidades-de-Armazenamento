@@ -19,24 +19,24 @@ def calcularFatorDeConversão(unidadeInicial, unidadeDeConversão):
     return int(fatorDeConversão)
 
 def conversão(unidadeInicial, unidadeDeConversão, númeroParaConversão):
-    fatorDeConvesão = calcularFatorDeConversão(unidadeInicial, unidadeDeConversão)
+    fatorDeConversão = calcularFatorDeConversão(unidadeInicial, unidadeDeConversão)
     númeroConvertido = númeroParaConversão
 
     if(unidadeInicial == 'Bit' or unidadeDeConversão == 'Bit'):
         if(unidadeInicial == 'Bit'):
             númeroConvertido /= 8
-            fatorDeConvesão += 1 
+            fatorDeConversão += 1 
         if(unidadeDeConversão == 'Bit'):
             númeroConvertido *= 8 
-            fatorDeConvesão -= 1 
+            fatorDeConversão -= 1 
 
-    if (fatorDeConvesão < 0):
-        fatorDeConvesão *= -1
-        fatorDeConvesão = 1024 ** fatorDeConvesão
-        númeroConvertido /= fatorDeConvesão
-    elif(fatorDeConvesão > 0):
-        fatorDeConvesão = 1024 ** fatorDeConvesão
-        númeroConvertido *= fatorDeConvesão
+    if (fatorDeConversão < 0):
+        fatorDeConversão *= -1
+        fatorDeConversão = 1024 ** fatorDeConversão
+        númeroConvertido /= fatorDeConversão
+    elif(fatorDeConversão > 0):
+        fatorDeConversão = 1024 ** fatorDeConversão
+        númeroConvertido *= fatorDeConversão
         
     return númeroConvertido
 
