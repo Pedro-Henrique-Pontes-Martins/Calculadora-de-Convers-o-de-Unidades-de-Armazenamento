@@ -41,12 +41,25 @@ def conversão(unidadeInicial, unidadeDeConversão, númeroParaConversão):
     return númeroConvertido
 
 mostrarUnidadesDeMedida(unidadesDeMedidas)
+inputValido = False
+while inputValido == False:
+    print('Digite a unidade de medida inicial do valor:')
+    unidadeInicial = input()
+    if unidadeInicial in unidadesDeMedidas:
+        inputValido = True
+    else:
+        print('Unidade Inválida')
 
-print('Digite a unidade de medida inicial do valor:')
-unidadeInicial = input()
-print('Digite a unidade para qual o valor será convertido:')
-unidadeDeConversão = input()
-print('Digite o número a ser convertido:')
+inputValido = False
+while inputValido == False:
+    print('Digite a unidade para qual o valor será convertido:')
+    unidadeDeConversão = input()
+    if unidadeDeConversão in unidadesDeMedidas:
+        inputValido = True
+    else:
+        print('Unidade Inválida')
+        
+print('Digite o valor a ser convertido:')
 numeroParaConversão = float(input())
 
 print('Resultado da conversão:')
