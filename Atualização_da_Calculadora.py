@@ -58,7 +58,7 @@ while inputValido == False:
         inputValido = True
     else:
         print('Unidade Inválida')
-        
+
 print('Digite o valor a ser convertido:')
 numeroParaConversão = float(input())
 
